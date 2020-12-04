@@ -58,4 +58,25 @@ var arrayOfQuestion=[{
 for(var i=0;i<arrayOfQuestion.length;i++){
   play(arrayOfQuestion[i].question,arrayOfQuestion[i].answer);
 }
-log(chalk.yellowBright("Your final score is: "+score));
+
+var highScore=[{
+  name:"Rajeev",
+  score:10
+},{
+  name:"Anand",
+  score:9
+},{
+  name:"Lucky",
+  score:8
+}];
+
+for(var i=0;i<highScore.length;i++){
+  var result=highScore[i].score<score;
+  if(result){
+    log(chalk.yellowBright("Booom! You broke the record of "+highScore[i].name+"\n"));
+  }
+}
+
+log(chalk.bgBlack("Please share a screenshot of your score."));
+log(chalk.yellowBright(chalk.green(userName)+" your final score is: "+score));
+
